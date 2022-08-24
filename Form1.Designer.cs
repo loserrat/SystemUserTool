@@ -44,6 +44,10 @@ namespace Rektec.Tools.UpdateUserRole
             this.button3 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -52,43 +56,39 @@ namespace Rektec.Tools.UpdateUserRole
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.richTextBox5 = new System.Windows.Forms.RichTextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.button8 = new System.Windows.Forms.Button();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button9 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            this.groupBox11.SuspendLayout();
-            this.groupBox12.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -263,6 +263,52 @@ namespace Rektec.Tools.UpdateUserRole
             this.tabPage1.Text = "创建用户";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.comboBox4);
+            this.groupBox12.Location = new System.Drawing.Point(19, 584);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(252, 103);
+            this.groupBox12.TabIndex = 23;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "系统用户匹配字段（模板-用户）";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "domainname",
+            "fullname"});
+            this.comboBox4.Location = new System.Drawing.Point(16, 43);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(141, 23);
+            this.comboBox4.TabIndex = 6;
+            this.comboBox4.Text = "domainname";
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.checkBox5);
+            this.groupBox11.Controls.Add(this.groupBox7);
+            this.groupBox11.Controls.Add(this.groupBox6);
+            this.groupBox11.Controls.Add(this.groupBox8);
+            this.groupBox11.Controls.Add(this.button7);
+            this.groupBox11.Location = new System.Drawing.Point(19, 126);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(703, 295);
+            this.groupBox11.TabIndex = 22;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "创建AD用户";
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(552, 163);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(134, 19);
+            this.checkBox5.TabIndex = 21;
+            this.checkBox5.Text = "只记录失败信息";
+            this.checkBox5.UseVisualStyleBackColor = true;
+            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.textBox2);
@@ -339,6 +385,81 @@ namespace Rektec.Tools.UpdateUserRole
             this.textBox6.TabIndex = 16;
             this.textBox6.Text = "Hisense@2o19";
             // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.textBox7);
+            this.groupBox8.Controls.Add(this.checkBox4);
+            this.groupBox8.Location = new System.Drawing.Point(311, 153);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(182, 137);
+            this.groupBox8.TabIndex = 20;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "账号设置";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(26, 85);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(134, 25);
+            this.textBox7.TabIndex = 20;
+            this.textBox7.Text = "512";
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(26, 40);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(134, 19);
+            this.checkBox4.TabIndex = 19;
+            this.checkBox4.Text = "自定义账户选项";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Red;
+            this.button7.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button7.Location = new System.Drawing.Point(543, 193);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(154, 93);
+            this.button7.TabIndex = 0;
+            this.button7.Text = "清空日志";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.comboBox3);
+            this.groupBox10.Location = new System.Drawing.Point(285, 584);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(240, 103);
+            this.groupBox10.TabIndex = 21;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "业务部门匹配字段（模板-用户）";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "name",
+            "new_code"});
+            this.comboBox3.Location = new System.Drawing.Point(16, 43);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(141, 23);
+            this.comboBox3.TabIndex = 6;
+            this.comboBox3.Text = "name";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.button4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button4.Location = new System.Drawing.Point(356, 469);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(169, 93);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "连接到域控服务器";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // richTextBox5
             // 
             this.richTextBox5.BackColor = System.Drawing.SystemColors.Info;
@@ -389,6 +510,18 @@ namespace Rektec.Tools.UpdateUserRole
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.button8.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button8.Location = new System.Drawing.Point(562, 591);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(154, 93);
+            this.button8.TabIndex = 0;
+            this.button8.Text = "新增CRM用户";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button7_Click);
+            // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -400,18 +533,6 @@ namespace Rektec.Tools.UpdateUserRole
             this.button5.Text = "新增AD用户";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button4.Location = new System.Drawing.Point(371, 469);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(154, 93);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "连接到域控服务器";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // tabPage2
             // 
@@ -434,34 +555,25 @@ namespace Rektec.Tools.UpdateUserRole
             this.tabPage2.Text = "用户配置";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // checkBox6
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(26, 40);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(134, 19);
-            this.checkBox4.TabIndex = 19;
-            this.checkBox4.Text = "自定义账户选项";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(570, 119);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(134, 19);
+            this.checkBox6.TabIndex = 14;
+            this.checkBox6.Text = "只记录失败信息";
+            this.checkBox6.UseVisualStyleBackColor = true;
             // 
-            // groupBox8
+            // groupBox9
             // 
-            this.groupBox8.Controls.Add(this.textBox7);
-            this.groupBox8.Controls.Add(this.checkBox4);
-            this.groupBox8.Location = new System.Drawing.Point(311, 153);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(182, 137);
-            this.groupBox8.TabIndex = 20;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "账号设置";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(26, 85);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(134, 25);
-            this.textBox7.TabIndex = 20;
-            this.textBox7.Text = "512";
+            this.groupBox9.Controls.Add(this.comboBox2);
+            this.groupBox9.Location = new System.Drawing.Point(277, 72);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(240, 103);
+            this.groupBox9.TabIndex = 13;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "业务部门匹配字段（模板-用户）";
             // 
             // comboBox2
             // 
@@ -474,118 +586,6 @@ namespace Rektec.Tools.UpdateUserRole
             this.comboBox2.Size = new System.Drawing.Size(204, 23);
             this.comboBox2.TabIndex = 6;
             this.comboBox2.Text = "name";
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.comboBox2);
-            this.groupBox9.Location = new System.Drawing.Point(277, 72);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(240, 103);
-            this.groupBox9.TabIndex = 13;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "业务部门匹配字段（模板-用户）";
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Red;
-            this.button7.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button7.Location = new System.Drawing.Point(543, 193);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(154, 93);
-            this.button7.TabIndex = 0;
-            this.button7.Text = "清空日志";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click_1);
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.comboBox3);
-            this.groupBox10.Location = new System.Drawing.Point(285, 584);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(240, 103);
-            this.groupBox10.TabIndex = 21;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "业务部门匹配字段（模板-用户）";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "name",
-            "new_code"});
-            this.comboBox3.Location = new System.Drawing.Point(16, 43);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(141, 23);
-            this.comboBox3.TabIndex = 6;
-            this.comboBox3.Text = "name";
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Controls.Add(this.checkBox5);
-            this.groupBox11.Controls.Add(this.groupBox7);
-            this.groupBox11.Controls.Add(this.groupBox6);
-            this.groupBox11.Controls.Add(this.groupBox8);
-            this.groupBox11.Controls.Add(this.button7);
-            this.groupBox11.Location = new System.Drawing.Point(19, 126);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(703, 295);
-            this.groupBox11.TabIndex = 22;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "创建AD用户";
-            // 
-            // groupBox12
-            // 
-            this.groupBox12.Controls.Add(this.comboBox4);
-            this.groupBox12.Location = new System.Drawing.Point(19, 584);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(252, 103);
-            this.groupBox12.TabIndex = 23;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "系统用户匹配字段（模板-用户）";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "domainname",
-            "fullname"});
-            this.comboBox4.Location = new System.Drawing.Point(16, 43);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(141, 23);
-            this.comboBox4.TabIndex = 6;
-            this.comboBox4.Text = "domainname";
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.button8.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button8.Location = new System.Drawing.Point(562, 591);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(154, 93);
-            this.button8.TabIndex = 0;
-            this.button8.Text = "新增CRM用户";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(552, 163);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(134, 19);
-            this.checkBox5.TabIndex = 21;
-            this.checkBox5.Text = "只记录失败信息";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(570, 119);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(134, 19);
-            this.checkBox6.TabIndex = 14;
-            this.checkBox6.Text = "只记录失败信息";
-            this.checkBox6.UseVisualStyleBackColor = true;
             // 
             // button9
             // 
@@ -615,20 +615,20 @@ namespace Rektec.Tools.UpdateUserRole
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
             this.groupBox9.ResumeLayout(false);
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
-            this.groupBox12.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

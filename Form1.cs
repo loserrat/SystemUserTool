@@ -594,30 +594,30 @@ namespace Rektec.Tools.UpdateUserRole
         {
             LoadingHelper.ShowLoadingScreen();//显示
 
-            if (!File.Exists(textBox4.Text))
-            {
-                ConcateLogMessage(this.richTextBox4, $"请选择可访问的文件，当前 {this.textBox4.Text}");
-
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(textBox5.Text))
-            {
-                ConcateLogMessage(this.richTextBox4, $"域控管理员账号（crmadmin）不要提供吗？，当前 {this.textBox5.Text}");
-
-                return;
-            }
-
-
-            if (string.IsNullOrWhiteSpace(textBox6.Text))
-            {
-                ConcateLogMessage(this.richTextBox4, $"域控管理员密码（crmadmin）不要提供吗？，当前 {this.textBox6.Text}");
-
-                return;
-            }
-
             try
             {
+                if (!File.Exists(textBox4.Text))
+                {
+                    ConcateLogMessage(this.richTextBox4, $"请选择可访问的文件，当前 {this.textBox4.Text}");
+
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(textBox5.Text))
+                {
+                    ConcateLogMessage(this.richTextBox4, $"域控管理员账号（crmadmin）不要提供吗？，当前 {this.textBox5.Text}");
+
+                    return;
+                }
+
+
+                if (string.IsNullOrWhiteSpace(textBox6.Text))
+                {
+                    ConcateLogMessage(this.richTextBox4, $"域控管理员密码（crmadmin）不要提供吗？，当前 {this.textBox6.Text}");
+
+                    return;
+                }
+
                 DataSet ds = GetAllDataTable(textBox4.Text);
                 IList<UserItem> adusers = new List<UserItem>();
 
