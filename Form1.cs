@@ -567,17 +567,17 @@ namespace Rektec.Tools.UpdateUserRole
 
         private void button4_Click(object sender, EventArgs e)
         {
-            IsConnected("", "", "");
+            IsConnected();
         }
 
-        private void IsConnected(string domainName, string userName, string userPwd)
+        private void IsConnected()
         {
             try
             {
                 DirectoryEntry domain = new DirectoryEntry();
-                domain.Path = "LDAP://10.19.65.42";
-                domain.Username = "crmadmin";
-                domain.Password = "Hisense@2o19";
+                domain.Path = this.textBox2.Text;
+                domain.Username = this.textBox5.Text;
+                domain.Password = this.textBox6.Text;
                 domain.AuthenticationType = AuthenticationTypes.Secure;
                 domain.RefreshCache();
 
@@ -702,7 +702,7 @@ namespace Rektec.Tools.UpdateUserRole
 
                 foreach (var item in adusers)
                 {
-                    AddUser2AD(item);//, "LDAP://10.19.65.42/OU=Users,OU=CrmUsers,DC=hxcrm,DC=local"
+                    AddUser2AD(item);
                 }
             }
             catch (Exception ex)

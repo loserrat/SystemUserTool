@@ -328,7 +328,7 @@ namespace Rektec.Tools.UpdateUserRole
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(520, 25);
             this.textBox2.TabIndex = 10;
-            this.textBox2.Text = "LDAP://10.19.65.42";
+            this.textBox2.Text = "LDAP://10.11.67.44";
             // 
             // textBox3
             // 
@@ -383,7 +383,7 @@ namespace Rektec.Tools.UpdateUserRole
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(254, 25);
             this.textBox6.TabIndex = 16;
-            this.textBox6.Text = "Hisense@2o19";
+            this.textBox6.Text = "MEfes123@2o19";
             // 
             // groupBox8
             // 
