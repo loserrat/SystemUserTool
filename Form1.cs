@@ -977,6 +977,71 @@ namespace Rektec.Tools.UpdateUserRole
         {
             this.richTextBox1.Text = "";
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            this.button11_Click(sender, e);
+
+            if (string.IsNullOrWhiteSpace(this.textBox2.Text))
+            {
+                ConcateLogMessage(this.richTextBox4, $"请点击'获取LDAP域'");
+
+                return;
+            }
+
+            this.treeView1.Nodes.Clear();
+
+            DirectoryEntry rootEntry = new DirectoryEntry(this.textBox2.Text);
+
+            DirectorySearcher dsFindOUs = new DirectorySearcher(rootEntry);
+
+            dsFindOUs.Filter = "(|(&(objectClass=organizationalUnit)(!ou=Domain Controllers))(&(objectClass=container)(cn=Users)))";
+            //dsFindOUs.Filter = "(|(objectClass=organizationalUnit)(objectClass=container))";
+            //(| (objectClass = organizationalUnit)(objectCategory = group)(objectCategory = computer)(objectClass = domainDNS))
+
+            dsFindOUs.SearchScope = SearchScope.Subtree;
+
+            dsFindOUs.PropertiesToLoad.Add("displayName");
+
+            var findOus = dsFindOUs.FindAll();
+
+            foreach (SearchResult result in findOus)
+            {
+                //ConcateLogMessage(this.richTextBox4, RekTec.Crm.Common.Helper.JsonHelper.Serialize(result));
+                //ConcateLogMessage(this.richTextBox4, result.Path);
+                treeView1.Nodes.Add(new TreeNode(result.Path));
+            }
+
+            if (findOus != null && findOus.Count > 0)
+            {
+                this.textBox3.Text = findOus[0].Path;
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            DirectoryEntry rootEntry = new DirectoryEntry("LDAP://localhost");
+
+            DirectorySearcher dsFindOUs = new DirectorySearcher(rootEntry);
+
+            dsFindOUs.Filter = "(objectClass=domainDNS)";
+            //(| (objectClass = organizationalUnit)(objectCategory = group)(objectCategory = computer)(objectClass = domainDNS))
+
+            dsFindOUs.SearchScope = SearchScope.Subtree;
+
+            dsFindOUs.PropertiesToLoad.Add("displayName");
+
+            foreach (SearchResult result in dsFindOUs.FindAll())
+            {
+                //ConcateLogMessage(this.richTextBox4, result.Path);
+                this.textBox2.Text = result.Path;
+            }
+        }
+
+        private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            this.textBox3.Text = e.Node.Text;
+        }
     }
 
     public class UserRoleItem
