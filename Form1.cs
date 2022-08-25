@@ -356,11 +356,17 @@ namespace Rektec.Tools.UpdateUserRole
 
                             organizationServiceAdmin.Execute(disassociateRequest);
 
-                            ConcateLogMessage(this.richTextBox1, $"移除用户角色成功 {username},{rolename}");
+                            if (this.checkBox6.Checked == false)
+                            {
+                                ConcateLogMessage(this.richTextBox1, $"移除用户角色成功 {username},{rolename}");
+                            }
                         }
                         else
                         {
-                            ConcateLogMessage(this.richTextBox1, $"用户角色已存在，跳过 {username},{rolename}");
+                            if (this.checkBox6.Checked == false)
+                            {
+                                ConcateLogMessage(this.richTextBox1, $"用户角色已存在，跳过 {username},{rolename}");
+                            }
                         }
 
                         continue;
@@ -369,7 +375,10 @@ namespace Rektec.Tools.UpdateUserRole
                     {
                         if (this.checkBox2.Checked == true)
                         {
-                            ConcateLogMessage(this.richTextBox1, $"用户当前没有角色 {username},{rolename},无需移除");
+                            if (this.checkBox6.Checked == false)
+                            {
+                                ConcateLogMessage(this.richTextBox1, $"用户当前没有角色 {username},{rolename},无需移除");
+                            }
 
                             continue;
                         }
@@ -387,7 +396,10 @@ namespace Rektec.Tools.UpdateUserRole
 
                     organizationServiceAdmin.Execute(associateRequest);
 
-                    ConcateLogMessage(this.richTextBox1, $"添加用户角色成功 {username},{rolename}");
+                    if (this.checkBox6.Checked == false)
+                    {
+                        ConcateLogMessage(this.richTextBox1, $"添加用户角色成功 {username},{rolename}");
+                    }
                     #endregion 添加/移除角色
                 }
 
