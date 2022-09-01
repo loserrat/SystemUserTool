@@ -202,6 +202,8 @@
     <None Include="Config\RekTec.XStudio.CrmClient.Config.CrmConfig.xml-测试环境.config" />
     <None Include="Config\RekTec.XStudio.CrmClient.Config.CrmConfig.xml-生产环境.config" />
     <None Include="Config\RekTec.XStudio.CrmClient.Config.CrmConfig.xml.config" />
+    <None Include="Data\用户-修改.xlsx" />
+    <None Include="Data\用户.xlsx" />
     <None Include="Data\用户对应业务部门.xlsx" />
     <None Include="Data\用户对应安全角色.xlsx" />
     <None Include="packages.config" />

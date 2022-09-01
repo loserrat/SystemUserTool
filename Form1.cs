@@ -738,7 +738,7 @@ namespace Rektec.Tools.UpdateUserRole
             try
             {
                 // strADAccount ，strADPassword为AD管理员账户和密码
-                DirectoryEntry objDE = new DirectoryEntry(this.textBox2.Text + this.textBox3.Text, this.textBox5.Text, this.textBox6.Text);
+                DirectoryEntry objDE = new DirectoryEntry(this.textBox3.Text, this.textBox5.Text, this.textBox6.Text);
 
                 DirectoryEntries objDES = objDE.Children;
                 DirectoryEntry myDE = objDES.Add(strname, "User");
@@ -779,6 +779,137 @@ namespace Rektec.Tools.UpdateUserRole
             catch (Exception ex)
             {
                 ConcateLogMessage(this.richTextBox4, $"AD服务器新增用户失败：" + ex.Message);
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            LoadingHelper.ShowLoadingScreen();//显示
+
+            try
+            {
+                if (!File.Exists(textBox4.Text))
+                {
+                    ConcateLogMessage(this.richTextBox4, $"请选择可访问的文件，当前 {this.textBox4.Text}");
+
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(textBox5.Text))
+                {
+                    ConcateLogMessage(this.richTextBox4, $"域控管理员账号（crmadmin）不要提供吗？，当前 {this.textBox5.Text}");
+
+                    return;
+                }
+
+
+                if (string.IsNullOrWhiteSpace(textBox6.Text))
+                {
+                    ConcateLogMessage(this.richTextBox4, $"域控管理员密码（crmadmin）不要提供吗？，当前 {this.textBox6.Text}");
+
+                    return;
+                }
+
+                DataSet ds = GetAllDataTable(textBox4.Text);
+                IList<UserItem> adusers = new List<UserItem>();
+
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    var lastname = string.Empty;
+                    var firstname = string.Empty;
+                    var username = string.Empty;
+
+                    try
+                    {
+                        username = row["当前RDN姓名"].ToString().Trim();
+                        lastname = row["姓"].ToString().Trim();
+                        firstname = row["名"].ToString().Trim();
+
+                        var user = new UserItem() { UserName = username, LastName = lastname, FirstName = firstname };
+
+                        adusers.Add(user);
+                    }
+                    catch (Exception ex)
+                    {
+                        ConcateLogMessage(this.richTextBox4, $"文档值有问题，转文本失败，弄你");
+
+                        return;
+                    }
+                }
+
+                foreach (var item in adusers)
+                {
+                    ModifyUser(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                ConcateLogMessage(this.richTextBox4, $"修改AD用户失败"+ex.Message);
+            }
+            finally
+            {
+                LoadingHelper.CloseForm();//关闭
+            }
+        }
+
+        public void ModifyUser(UserItem user)
+        {
+            DirectoryEntry de1 = new DirectoryEntry(this.textBox3.Text, this.textBox5.Text, this.textBox6.Text);
+            DirectorySearcher deSearch = new DirectorySearcher();
+            deSearch.SearchRoot = de1;
+            deSearch.Filter = "(&(objectClass=user) (cn=" + user.UserName + "))";
+            SearchResultCollection results1 = deSearch.FindAll();
+            string employeeID = string.Empty;
+
+            if (results1.Count <= 0 || results1.Count > 1)
+            {
+                ConcateLogMessage(this.richTextBox4, $"查询到RDN用户{user.UserName}数量有问题：{results1.Count}个");
+
+                return;
+            }
+            else
+            {
+                //foreach (PropertyValueCollection item in results1[0].GetDirectoryEntry().Properties)
+                //{
+                //    if (string.Equals("", item.PropertyName, StringComparison.OrdinalIgnoreCase) && item.Value != null)
+                //    {
+                //        employeeID = Convert.ToString(item.Value);
+
+                //        ConcateLogMessage(this.richTextBox4, $"找到用户{UserName}，employeeID {item.Value}");
+
+                //        break;
+                //    }
+                //    //dic.Add(item.PropertyName, item.Value);
+                //}
+
+                DirectoryEntry dey = new DirectoryEntry(results1[0].Path, this.textBox5.Text, this.textBox6.Text);
+                SetProperty(dey, "sn", user.LastName);
+                SetProperty(dey, "GivenName", user.FirstName);
+                //SetProperty(dey, "cn", user.UserName);
+                dey.CommitChanges();
+                dey.Close();
+
+                if (this.checkBox5.Checked == false)
+                {
+                    ConcateLogMessage(this.richTextBox4, $"查询到RDN用户{user.UserName}，修改姓+名为{user.LastName + user.FirstName}");
+                }
+            }
+
+            de1.Close();
+        }
+
+        public static void SetProperty(DirectoryEntry de, string PropertyName, string PropertyValue)
+        {
+            if (PropertyValue != null)
+            {
+                if (de.Properties.Contains(PropertyName))
+                {
+                    de.Properties[PropertyName][0] = PropertyValue;
+                }
+                else
+                {
+                    de.Properties[PropertyName].Add(PropertyValue);
+                }
             }
         }
 

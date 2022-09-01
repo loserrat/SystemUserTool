@@ -44,10 +44,14 @@ namespace Rektec.Tools.UpdateUserRole
             this.button3 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.button10 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -75,10 +79,7 @@ namespace Rektec.Tools.UpdateUserRole
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button9 = new System.Windows.Forms.Button();
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -249,6 +250,7 @@ namespace Rektec.Tools.UpdateUserRole
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button13);
             this.tabPage1.Controls.Add(this.treeView1);
             this.tabPage1.Controls.Add(this.groupBox12);
             this.tabPage1.Controls.Add(this.groupBox11);
@@ -267,6 +269,14 @@ namespace Rektec.Tools.UpdateUserRole
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "创建用户";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(741, 13);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(587, 138);
+            this.treeView1.TabIndex = 24;
+            this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
             // 
             // groupBox12
             // 
@@ -307,6 +317,29 @@ namespace Rektec.Tools.UpdateUserRole
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "创建AD用户";
             // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.White;
+            this.button12.FlatAppearance.BorderSize = 0;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Location = new System.Drawing.Point(431, 13);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.TabIndex = 26;
+            this.button12.Text = "-》》";
+            this.button12.UseVisualStyleBackColor = false;
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button11.Location = new System.Drawing.Point(293, 13);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(139, 23);
+            this.button11.TabIndex = 25;
+            this.button11.Text = "获取LDAP根域";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
@@ -316,6 +349,17 @@ namespace Rektec.Tools.UpdateUserRole
             this.checkBox5.TabIndex = 21;
             this.checkBox5.Text = "只记录失败信息";
             this.checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.button10.Location = new System.Drawing.Point(503, 13);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(139, 23);
+            this.button10.TabIndex = 25;
+            this.button10.Text = "获取LDAP组织单位";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // groupBox7
             // 
@@ -459,7 +503,7 @@ namespace Rektec.Tools.UpdateUserRole
             // 
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button4.Location = new System.Drawing.Point(356, 469);
+            this.button4.Location = new System.Drawing.Point(201, 469);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(169, 93);
             this.button4.TabIndex = 0;
@@ -533,7 +577,7 @@ namespace Rektec.Tools.UpdateUserRole
             // 
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button5.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button5.Location = new System.Drawing.Point(562, 469);
+            this.button5.Location = new System.Drawing.Point(397, 469);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(154, 93);
             this.button5.TabIndex = 0;
@@ -606,47 +650,17 @@ namespace Rektec.Tools.UpdateUserRole
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // treeView1
+            // button13
             // 
-            this.treeView1.Location = new System.Drawing.Point(741, 13);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(587, 138);
-            this.treeView1.TabIndex = 24;
-            this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button10.Location = new System.Drawing.Point(503, 13);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(139, 23);
-            this.button10.TabIndex = 25;
-            this.button10.Text = "获取LDAP组织单位";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button11.Location = new System.Drawing.Point(293, 13);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(139, 23);
-            this.button11.TabIndex = 25;
-            this.button11.Text = "获取LDAP根域";
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.Color.White;
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Location = new System.Drawing.Point(431, 13);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 26;
-            this.button12.Text = "-》》";
-            this.button12.UseVisualStyleBackColor = false;
+            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button13.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button13.Location = new System.Drawing.Point(571, 469);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(151, 93);
+            this.button13.TabIndex = 25;
+            this.button13.Text = "修改AD用户";
+            this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // Form1
             // 
@@ -734,6 +748,7 @@ namespace Rektec.Tools.UpdateUserRole
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
     }
 }
 
